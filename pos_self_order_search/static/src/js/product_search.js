@@ -7,6 +7,7 @@ import { useState } from "@odoo/owl";
 patch(ProductListPage.prototype, 'pos_self_order_search.ProductListPage', {
     setup() {
         super.setup();
+        console.log("ProductListPage patched!"); // <-- Agregado
         this.state = useState({
             searchTerm: '',
             filteredProducts: this.products,
@@ -14,11 +15,13 @@ patch(ProductListPage.prototype, 'pos_self_order_search.ProductListPage', {
     },
 
     updateSearchTerm(event) {
+        console.log("updateSearchTerm called!"); // <-- Agregado
         this.state.searchTerm = event.target.value;
         this.filterProducts();
     },
 
     filterProducts() {
+        console.log("filterProducts called!"); // <-- Agregado
         if (!this.state.searchTerm) {
             this.state.filteredProducts = this.products;
         } else {
@@ -30,6 +33,7 @@ patch(ProductListPage.prototype, 'pos_self_order_search.ProductListPage', {
     },
 
     get productsToDisplay() {
+        console.log("productsToDisplay getter called!"); // <-- Agregado
         return this.state.filteredProducts;
     },
 });
