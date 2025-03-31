@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
-    <t t-name="pos_self_order_search_v18.ProductListPage" t-inherit="pos_self_order.ProductListPage" t-inherit-mode="extension" owl="1">
+    <t t-name="pos_self_order_search_v18.ProductListPage.Test" t-inherit="pos_self_order.ProductListPage" t-inherit-mode="extension" owl="1">
 
-        <xpath expr="//*[hasclass('product-list-content')]" position="before">
-            <div class="pos-search-bar m-3 input-group shadow-sm"> <span class="input-group-text bg-white border-end-0 ps-3 pe-1" id="search-addon"> <i class="fa fa-search text-muted"/> </span>
-                <input type="text"
-                       class="form-control border-start-0"
-                       placeholder="Buscar productos..."
-                       t-on-input="onSearchInput" aria-label="Buscar productos"
-                       aria-describedby="search-addon"/>
-            </div>
+        <xpath expr="." position="attributes">
+            <attribute name="data-search-test">xml-applied</attribute>
         </xpath>
 
-    </t>
+        </t>
 
 </templates>
