@@ -1,56 +1,29 @@
+# -*- coding: utf-8 -*-
 {
-    'name': "POS Self Order Search",
-    'version': '1.0.0',
-    'depends': ['pos_self_order'],
+    'name': 'POS Self-Order Product Search',
+    'version': '18.0.1.0.0',
+    'category': 'Sales/Point of Sale',
+    'summary': 'Adds product search functionality to the POS Self-Order screen.',
+    'description': """
+This module reintroduces the product search bar in the Odoo 18 Point of Sale
+Self-Order interface, similar to the functionality present in Odoo 17.
+    """,
+    'depends': [
+        'pos_self_order', # Dependencia fundamental
+    ],
     'assets': {
-        'pos_self_order.assets': [  # <---  ¡CLAVE EXACTA!
-            # ***¡COPIA TODO DE pos_self_order!***
-            "pos_self_order/static/src/app/primary_variables.scss",
-            "pos_self_order/static/src/app/bootstrap_overridden.scss",
-            ("include", "point_of_sale.base_app"),
-            'web/static/src/core/currency.js',
-            'barcodes/static/src/barcode_service.js',
-            'point_of_sale/static/src/utils.js',
-            'web/static/lib/bootstrap/js/dist/util/index.js',
-            'web/static/lib/bootstrap/js/dist/dom/data.js',
-            'web/static/lib/bootstrap/js/dist/dom/event-handler.js',
-            'web/static/lib/bootstrap/js/dist/dom/manipulator.js',
-            'web/static/lib/bootstrap/js/dist/dom/selector-engine.js',
-            'web/static/lib/bootstrap/js/dist/util/config.js',
-            'web/static/lib/bootstrap/js/dist/util/swipe.js',
-            'web/static/lib/bootstrap/js/dist/base-component.js',
-            "web/static/lib/bootstrap/js/dist/carousel.js",
-            'web/static/lib/bootstrap/js/dist/scrollspy.js',
-            "point_of_sale/static/src/app/store/models/product_custom_attribute.js",
-            'web_editor/static/src/js/editor/odoo-editor/src/base_style.scss',
-            'web_editor/static/src/scss/web_editor.common.scss',
-            "point_of_sale/static/src/app/generic_components/numpad/*",
-            "point_of_sale/static/src/app/generic_components/product_card/*",
-            "point_of_sale/static/src/app/generic_components/order_widget/*",
-            "point_of_sale/static/src/app/generic_components/orderline/*",
-            "point_of_sale/static/src/app/generic_components/centered_icon/*",
-            "point_of_sale/static/src/css/pos_receipts.css",
-            "point_of_sale/static/src/app/screens/receipt_screen/receipt/**/*",
-            "pos_self_order/static/src/overrides/components/receipt_header/*",
-            "point_of_sale/static/src/app/printer/base_printer.js",
-            "point_of_sale/static/src/app/printer/printer_service.js",
-            'point_of_sale/static/src/app/utils/html-to-image.js',
-            "point_of_sale/static/src/app/printer/render_service.js",
-            "pos_self_order/static/src/app/**/*",
-            "point_of_sale/static/src/app/printer/hw_printer.js",
-            "web/static/src/core/utils/render.js",
-            "pos_self_order/static/src/app/store/order_change_receipt_template.xml",
-            "account/static/src/helpers/*.js",
-            "web/static/src/views/fields/parsers.js",
-            # Related models from point_of_sale
-            "point_of_sale/static/src/app/models/data_service_options.js",
-            "point_of_sale/static/src/app/models/utils/indexed_db.js",
-            "point_of_sale/static/src/app/models/related_models.js",
-            "point_of_sale/static/src/app/models/data_service.js",
-            "point_of_sale/static/src/app/models/**/*",
-            "pos_restaurant/static/src/app/models/restaurant_table.js",
-            # ***AÑADE TU ARCHIVO AQUÍ!***
-            'pos_self_order_search/static/src/js/product_search.js',
+        # Especificamos el bundle de assets del autopedido para añadir nuestros JS
+        'pos_self_order.assets_self_order': [
+            # Asegúrate de que la ruta sea correcta desde la raíz del servidor
+            'pos_self_order_search/static/src/app/pages/product_list_page/product_list_page.js',
+        ],
+        # Añadimos nuestro XML de vista/template heredado
+        'web.assets_qweb': [
+             'pos_self_order_search/views/pos_self_order_product_list_page.xml',
         ],
     },
+    'installable': True,
+    'application': False,
+    'auto_install': False, # Opcional: True si quieres que se instale automáticamente cuando pos_self_order se instale
+    'license': 'LGPL-3', # O el tipo de licencia que prefieras
 }
