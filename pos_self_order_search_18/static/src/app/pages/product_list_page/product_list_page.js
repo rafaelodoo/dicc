@@ -2,7 +2,8 @@
 
 // Importaciones necesarias
 import { patch } from "@web/core/utils/patch"; // Utilidad para parchear
-import { ProductListPage } from "@pos_self_order/app/pages/product_list_page/product_list_page"; // Componente original
+// import { ProductListPage } from "@pos_self_order/app/pages/product_list_page/product_list_page"; 
+import { ProductListPage } from "@pos_self_order/static/src/app/pages/product_list_page/product_list_page"; // Componente original
 import { useState } from "@odoo/owl"; // Hook para estado reactivo
 
 // Aplicamos el parche al prototipo del componente original
