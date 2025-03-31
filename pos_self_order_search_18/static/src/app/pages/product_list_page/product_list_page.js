@@ -9,6 +9,8 @@ import { useState } from "@odoo/owl"; // Hook para estado reactivo
 // Aplicamos el parche al prototipo del componente original
 patch(ProductListPage.prototype, {
 
+    
+
     /**
      * Sobrescribimos el método setup para añadir nuestro estado de búsqueda.
      */
