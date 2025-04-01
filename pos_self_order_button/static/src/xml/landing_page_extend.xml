@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="pos_self_order_button.LandingPage" t-extend="pos_self_order.LandingPage">
+        <t t-jquery=".d-flex.gap-3" t-operation="prepend">
+            <a type="button" t-on-click="_onClickMyCustomButton" class="btn btn-lg btn-primary" style="border-color: #714B67">
+                Mi Botón
+            </a>
+        </t>
+    </t>
+</templates>
