@@ -18,8 +18,8 @@
             </div>
         </xpath>
 
-        <xpath expr="//t[@t-foreach='selfOrder.productByCategIds[category.id]']" position="attributes">
-            <attribute name="t-foreach">getFilteredProducts(selfOrder.productByCategIds[category.id])</attribute>
+        <xpath expr="//t[@t-set='availableProducts']" position="replace">
+            <t t-set="availableProducts" t-value="getFilteredProducts(products)" />
         </xpath>
     </t>
 </templates> 
