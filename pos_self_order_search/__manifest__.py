@@ -12,7 +12,9 @@ allowing customers to search for products in both mobile and desktop views.
     'data': [],
     'assets': {
         'pos_self_order.assets': [
-            'pos_self_order_search/static/src/app/pages/product_list_page/**/*',
+            'pos_self_order_search/static/src/app/pages/product_list_page/product_list_page.js',
+            'pos_self_order_search/static/src/app/pages/product_list_page/product_list_page.xml',
+            'pos_self_order_search/static/src/app/pages/product_list_page/product_list_page.scss',
         ],
     },
     'installable': True,

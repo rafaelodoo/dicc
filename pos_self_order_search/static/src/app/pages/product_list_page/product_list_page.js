@@ -1,12 +1,12 @@
 /** @odoo-module **/
 import { ProductListPage } from "@pos_self_order/app/pages/product_list_page/product_list_page";
 import { patch } from "@web/core/utils/patch";
-import { useState } from "@web/core/utils/hooks";
+import { reactive } from "@web/core/utils/reactive";
 
 patch(ProductListPage.prototype, {
     setup() {
         super.setup();
-        this.searchState = useState({
+        this.searchState = reactive({
             isVisible: false,
             input: "",
         });
