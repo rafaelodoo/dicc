@@ -17,6 +17,7 @@ patch(ProductListPage.prototype, {
         this.searchState.isVisible = !this.searchState.isVisible;
         if (!this.searchState.isVisible) {
             this.searchState.input = "";
+            this.render();
         } else {
             // Focus the input field when showing the search
             requestAnimationFrame(() => {
@@ -25,6 +26,10 @@ patch(ProductListPage.prototype, {
                 }
             });
         }
+    },
+
+    onInputSearch(ev) {
+        this.searchState.input = ev.target.value;
         this.render();
     },
 
@@ -36,9 +41,10 @@ patch(ProductListPage.prototype, {
         if (!searchInput) {
             return products;
         }
-        return products.filter(product => 
-            (product.name && product.name.toLowerCase().includes(searchInput)) ||
-            (product.description_self_order && product.description_self_order.toLowerCase().includes(searchInput))
-        );
+        return products.filter(product => {
+            const name = (product.name || "").toLowerCase();
+            const description = (product.description_self_order || "").toLowerCase();
+            return name.includes(searchInput) || description.includes(searchInput);
+        });
     }
 }); 

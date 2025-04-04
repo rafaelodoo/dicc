@@ -12,7 +12,8 @@
                         t-ref="searchInput"
                         class="form-control border-0 shadow-none h-100"
                         placeholder="Buscar productos"
-                        t-model="this.searchState.input" />
+                        t-att-value="this.searchState.input"
+                        t-on-input="onInputSearch" />
                     <button class="btn-close me-3" t-on-click="focusSearch"/>
                 </div>
             </div>
