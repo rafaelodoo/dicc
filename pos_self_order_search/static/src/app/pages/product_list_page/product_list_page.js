@@ -1,23 +1,24 @@
 /** @odoo-module **/
 import { ProductListPage } from "@pos_self_order/app/pages/product_list_page/product_list_page";
 import { patch } from "@web/core/utils/patch";
-import { useRef } from "@odoo/owl";
+import { useRef, useState } from "@odoo/owl";
 
 patch(ProductListPage.prototype, {
     setup() {
         super.setup();
-        this.searchState = {
+        this.searchState = useState({
             isVisible: false,
             input: "",
-        };
+        });
         this.searchInputRef = useRef("searchInput");
     },
 
-    focusSearch() {
+    toggleSearch(ev) {
+        ev.preventDefault();
+        ev.stopPropagation();
         this.searchState.isVisible = !this.searchState.isVisible;
         if (!this.searchState.isVisible) {
             this.searchState.input = "";
-            this.render();
         } else {
             // Focus the input field when showing the search
             requestAnimationFrame(() => {
@@ -30,7 +31,6 @@ patch(ProductListPage.prototype, {
 
     onInputSearch(ev) {
         this.searchState.input = ev.target.value;
-        this.render();
     },
 
     getFilteredProducts(products) {

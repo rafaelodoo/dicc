@@ -3,18 +3,18 @@
     <t t-name="pos_self_order_search.ProductListPageSearch" t-inherit="pos_self_order.ProductListPage" t-inherit-mode="extension">
         <xpath expr="//nav[hasclass('category-list')]" position="after">
             <div class="search-container d-flex align-items-center position-relative flex-shrink-0 border-start">
-                <button class="search-button btn btn-light border-0 h-100 px-3" t-on-click="focusSearch">
+                <button class="search-button btn btn-light border-0 h-100 px-3" t-on-click.prevent="toggleSearch">
                     <i class="oi oi-search"/>
                 </button>
 
-                <div t-att-class="{ 'd-none': !this.searchState.isVisible }" class="search-overlay position-absolute start-0 w-100 h-100 d-flex align-items-center bg-view">
+                <div t-att-class="{ 'd-none': !searchState.isVisible }" class="search-overlay position-absolute start-0 w-100 h-100 d-flex align-items-center bg-view">
                     <input type="text"
                         t-ref="searchInput"
                         class="form-control border-0 shadow-none h-100"
                         placeholder="Buscar productos"
-                        t-att-value="this.searchState.input"
+                        t-att-value="searchState.input"
                         t-on-input="onInputSearch" />
-                    <button class="btn-close me-3" t-on-click="focusSearch"/>
+                    <button class="btn-close me-3" t-on-click.prevent="toggleSearch"/>
                 </div>
             </div>
         </xpath>
