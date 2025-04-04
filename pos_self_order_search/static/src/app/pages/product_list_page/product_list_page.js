@@ -1,6 +1,7 @@
 /** @odoo-module **/
 import { ProductListPage } from "@pos_self_order/app/pages/product_list_page/product_list_page";
 import { patch } from "@web/core/utils/patch";
+import { useRef } from "@odoo/owl";
 
 patch(ProductListPage.prototype, {
     setup() {
@@ -9,6 +10,7 @@ patch(ProductListPage.prototype, {
             isVisible: false,
             input: "",
         };
+        this.searchInputRef = useRef("searchInput");
     },
 
     focusSearch() {
@@ -18,7 +20,9 @@ patch(ProductListPage.prototype, {
         } else {
             // Focus the input field when showing the search
             requestAnimationFrame(() => {
-                this.refs.searchInput?.focus();
+                if (this.searchInputRef.el) {
+                    this.searchInputRef.el.focus();
+                }
             });
         }
         this.render();
