@@ -1,30 +1,27 @@
 /** @odoo-module **/
 import { ProductListPage } from "@pos_self_order/app/pages/product_list_page/product_list_page";
 import { patch } from "@web/core/utils/patch";
-import { useComponent } from "@odoo/owl";
 
 patch(ProductListPage.prototype, {
     setup() {
         super.setup();
-        const component = useComponent();
-        component.searchState = {
+        console.log("ProductListPage Search Patch Applied XXX"); // Mensaje para depuración
+        this.searchState = {
             isVisible: false,
             input: "",
         };
     },
 
     focusSearch() {
-        const component = useComponent();
-        component.searchState.isVisible = !component.searchState.isVisible;
-        if (!component.searchState.isVisible) {
-            component.searchState.input = "";
+        this.searchState.isVisible = !this.searchState.isVisible;
+        if (!this.searchState.isVisible) {
+            this.searchState.input = "";
         }
-        component.render();
+        this.render();
     },
 
     getFilteredProducts(products) {
-        const component = useComponent();
-        const searchInput = component.searchState.input.toLowerCase();
+        const searchInput = this.searchState.input.toLowerCase();
         if (!searchInput) {
             return products;
         }
