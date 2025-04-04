@@ -1,19 +1,40 @@
-.search-button {
-    position: relative;
-    z-index: 1;
-    border-radius: 0;
-    padding: 0.5rem 1rem;
-    
-    &:hover {
-        background-color: var(--o-gray-200);
-    }
-}
+.search-container {
+    min-width: 60px;
+    transition: min-width 0.3s ease;
 
-.btn-close {
-    opacity: 0.5;
-    transition: opacity 0.15s ease-in-out;
-    
-    &:hover {
-        opacity: 1;
+    &:has(.search-overlay:not(.d-none)) {
+        min-width: 300px;
+    }
+
+    .search-button {
+        z-index: 1;
+        
+        &:hover {
+            background-color: var(--o-gray-200);
+        }
+    }
+
+    .search-overlay {
+        z-index: 2;
+        padding-left: 1rem;
+        background-color: var(--o-white);
+
+        .form-control {
+            padding-left: 0;
+            background: transparent;
+
+            &:focus {
+                box-shadow: none;
+            }
+        }
+
+        .btn-close {
+            opacity: 0.5;
+            transition: opacity 0.15s ease-in-out;
+            
+            &:hover {
+                opacity: 1;
+            }
+        }
     }
 } 
