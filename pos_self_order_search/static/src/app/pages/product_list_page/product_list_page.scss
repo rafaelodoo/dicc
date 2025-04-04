@@ -1,0 +1,19 @@
+.search-button {
+    position: relative;
+    z-index: 1;
+    border-radius: 0;
+    padding: 0.5rem 1rem;
+    
+    &:hover {
+        background-color: var(--o-gray-200);
+    }
+}
+
+.btn-close {
+    opacity: 0.5;
+    transition: opacity 0.15s ease-in-out;
+    
+    &:hover {
+        opacity: 1;
+    }
+} 
