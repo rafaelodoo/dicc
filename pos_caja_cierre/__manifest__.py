@@ -13,7 +13,7 @@ Este módulo agrega funcionalidades específicas para el cierre de caja en el PO
         'views/pos_views.xml',
     ],
     'assets': {
-        'point_of_sale.assets': [
+        'point_of_sale.assets_prod': [
             'pos_caja_cierre/static/src/js/index.js',
             'pos_caja_cierre/static/src/xml/pos_caja_cierre.xml',
             'pos_caja_cierre/static/src/scss/pos_caja_cierre.scss',
