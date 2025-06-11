@@ -10,8 +10,8 @@ Este módulo agrega funcionalidades específicas para el cierre de caja en el PO
     'depends': ['point_of_sale'],
     'data': [
         'security/ir.model.access.csv',
-        'views/pos_views.xml',
         'views/res_config_settings_view.xml',
+        'views/pos_views.xml',
     ],
     'assets': {
         'point_of_sale.assets_prod': [
