@@ -5,6 +5,9 @@
         <xpath expr="//button[hasclass('btn-secondary') and contains(., 'Discard')]" position="after">
             <button class="button btn btn-secondary" t-on-click="() => console.log('Nuevo botón presionado')" t-att-class="this.ui.isSmall ? 'w-100' : 'btn-lg'">Nuevo</button>
         </xpath>
+        <xpath expr="//div[hasclass('payment-methods-overview')]" position="inside">
+            <h1>Contenido de prueba de pos_caja_cierre</h1>
+        </xpath>
     </t>
 
 </templates> 
