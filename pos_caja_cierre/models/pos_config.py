@@ -5,5 +5,6 @@ class PosConfig(models.Model):
 
     hide_cash_details_on_closing = fields.Boolean(
         string='Ocultar detalles de efectivo al cerrar',
-        help='Si está marcado, se ocultarán los detalles de efectivo al cerrar la caja'
+        help='Si está marcado, se ocultarán los detalles de efectivo al cerrar la caja',
+        default=False
     ) 
