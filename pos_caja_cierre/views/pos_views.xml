@@ -6,13 +6,12 @@
             <field name="model">pos.config</field>
             <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='receipt_footer']" position="after">
-                    <div class="o_settings_box" string="Cierre de Caja">
-                        <div class="o_row">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Cierre de Caja" name="cash_closure">
+                        <group>
                             <field name="hide_cash_details_on_closing"/>
-                            <label for="hide_cash_details_on_closing" string="Ocultar detalles de efectivo al cerrar"/>
-                        </div>
-                    </div>
+                        </group>
+                    </page>
                 </xpath>
             </field>
         </record>
