@@ -1,1 +1,14 @@
-<odoo><data></data></odoo> 
+<odoo>
+    <data>
+        <record id="pos_config_view_form_inherit_pos_caja_cierre" model="ir.ui.view">
+            <name>pos.config.view.form.inherit.pos.caja.cierre</name>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='cash_control']" position="after">
+                    <field name="hide_cash_details_on_closing"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo> 
