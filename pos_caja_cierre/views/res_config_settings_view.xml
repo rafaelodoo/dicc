@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.pos.caja.cierre</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="point_of_sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='pos_pricing_section']" position="after">
+                <h2>Cierre de Caja</h2>
+                <div class="row mt16 o_settings_container" id="pos_caja_cierre">
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane mt16">
+                            <field name="hide_cash_details_on_closing"/>
+                        </div>
+                        <div class="o_setting_right_pane mt16">
+                            <label for="hide_cash_details_on_closing"/>
+                            <div class="text-muted">
+                                Si está marcado, se ocultarán los detalles de efectivo al cerrar la caja
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo> 
