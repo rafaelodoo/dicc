@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-extend="SelfOrderScreen">
+        <t t-jquery=".o_self_order_content" t-operation="prepend">
+            <div class="o_self_order_search">
+                <input 
+                    type="text" 
+                    class="search-input" 
+                    t-att-placeholder="'Buscar productos...'"
+                    t-on-input="onSearchInput"
+                />
+                <t t-if="searchState.isSearching">
+                    <span class="search-loading">
+                        <i class="fa fa-spinner fa-spin"/>
+                    </span>
+                </t>
+            </div>
+        </t>
+    </t>
+</templates> 
