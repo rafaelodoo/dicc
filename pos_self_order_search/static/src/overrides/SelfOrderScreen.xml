@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
-    <t t-extend="SelfOrderScreen">
+    <t t-name="pos_self_order_search.SelfOrderScreenSearch" t-extend="SelfOrderScreen">
         <t t-jquery=".o_self_order_content" t-operation="prepend">
             <div class="o_self_order_search">
                 <input 
