@@ -1,17 +1,11 @@
 {
-    'name': 'POS Self Order - Product Search',
-    'version': '18.0.1.0.0',
+    'name': 'POS Self Order Search',
+    'version': '1.0',
     'category': 'Point of Sale',
-    'summary': 'Endpoint RPC para búsqueda de productos en Autopedido',
+    'summary': 'Add search functionality to POS Self Order',
     'description': """
-        Extensión para el módulo pos_self_order que proporciona un endpoint RPC
-        para la búsqueda eficiente de productos desde la interfaz de autopedido.
-        
-        Características:
-        - Búsqueda por nombre y código interno de producto
-        - Filtrado por productos disponibles en PdV
-        - Búsqueda insensible a mayúsculas y minúsculas
-        - Retorno optimizado de datos esenciales del producto
+        This module adds a search bar to the POS Self Order interface,
+        allowing customers to search for products dynamically.
     """,
     'author': 'DICC - Desarrollo e Innovación',
     'website': 'https://github.com/tu-org/dicc',
@@ -23,7 +17,13 @@
     'data': [
         'security/ir.model.access.csv',
     ],
-    'assets': {},
+    'assets': {
+        'web.assets_backend': [
+            'pos_self_order_search/static/src/overrides/SelfOrderScreen.js',
+            'pos_self_order_search/static/src/overrides/SelfOrderScreen.xml',
+            'pos_self_order_search/static/src/overrides/SelfOrderScreen.scss',
+        ],
+    },
     'demo': [],
     'test': [
         'tests/test_pos_session_search.py',
