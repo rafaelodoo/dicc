@@ -25,16 +25,18 @@ DICC es un proyecto de desarrollo dedicado a la creación de nuevos features, m�
 
 ```
 dicc/
-├── addons/                 # Módulos personalizados
-│   ├── custom_module_1/    # Ejemplo de módulo personalizado
-│   ├── custom_module_2/    # Ejemplo de módulo personalizado
-│   └── ...
-├── config/                 # Archivos de configuración
-├── data/                   # Datos de prueba y migraciones
+├── pos_self_order_search/  # Módulo de búsqueda para Autopedido
+├── custom_module_1/        # Ejemplo de módulo personalizado
+├── custom_module_2/        # Ejemplo de módulo personalizado
 ├── docs/                   # Documentación del proyecto
+│   └── tickets/            # Tickets de desarrollo
+├── config/                 # Archivos de configuración (desarrollo local)
+├── data/                   # Datos de prueba y migraciones
 ├── scripts/                # Scripts de utilidad
 └── tests/                  # Pruebas automatizadas
 ```
+
+> **Nota para Odoo.sh**: Los módulos se ubican directamente en la raíz del proyecto para compatibilidad con Odoo SH (Odoo.sh).
 
 ## 🔧 Instalación y Configuración
 
@@ -82,13 +84,37 @@ dicc/
    ./odoo-bin -c config/odoo.conf
    ```
 
+## 🌐 Despliegue en Odoo.sh
+
+Este proyecto está optimizado para **Odoo.sh**:
+
+- Los módulos se ubican directamente en la raíz del repositorio
+- No se requiere directorio `addons/`
+- Odoo.sh detecta automáticamente los módulos en la raíz
+- Los archivos de configuración local (`config/`) son ignorados en producción
+
+### Estructura para Odoo.sh
+```
+dicc/                       # Repositorio raíz
+├── pos_self_order_search/  # Módulo 1
+├── otro_modulo/            # Módulo 2
+├── docs/                   # Documentación
+└── README.md
+```
+
 ## 🔨 Desarrollo
 
 ### Crear un Nuevo Módulo
 
 ```bash
-# Generar estructura base del módulo
+# Generar estructura base del módulo en la raíz (para Odoo.sh)
 python scripts/create_module.py nombre_del_modulo
+
+# O manualmente:
+mkdir nombre_del_modulo
+cd nombre_del_modulo
+touch __manifest__.py __init__.py
+mkdir models views controllers data security tests
 ```
 
 ### Mejores Prácticas
@@ -102,15 +128,20 @@ python scripts/create_module.py nombre_del_modulo
 ### Estructura de un Módulo
 
 ```
-custom_module/
+custom_module/              # Módulo en la raíz del proyecto (Odoo.sh)
 ├── __manifest__.py         # Manifiesto del módulo
+├── __init__.py             # Inicialización del módulo
 ├── models/                 # Modelos de datos
+│   └── __init__.py
 ├── views/                  # Vistas XML
 ├── controllers/            # Controladores web
 ├── static/                 # Archivos estáticos (JS, CSS, imágenes)
 ├── data/                   # Datos por defecto
 ├── security/               # Reglas de acceso y seguridad
-└── tests/                  # Pruebas del módulo
+│   └── ir.model.access.csv
+├── tests/                  # Pruebas del módulo
+│   └── __init__.py
+└── README.md               # Documentación del módulo
 ```
 
 ## 🧪 Pruebas
@@ -120,10 +151,13 @@ custom_module/
 python -m pytest tests/
 
 # Ejecutar pruebas de un módulo específico
-python -m pytest tests/test_custom_module.py
+python -m pytest custom_module/tests/
 
 # Ejecutar pruebas con coverage
-pytest --cov=addons tests/
+pytest --cov=. tests/
+
+# Ejecutar pruebas de Odoo (si tienes servidor local)
+./odoo-bin -c config/odoo.conf -d test_db --test-enable --stop-after-init -i custom_module
 ```
 
 ## 📚 Documentación
