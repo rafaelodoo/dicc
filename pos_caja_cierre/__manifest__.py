@@ -23,4 +23,4 @@ Este módulo agrega funcionalidades específicas para el cierre de caja en el PO
     'installable': True,
     'auto_install': False,
     'license': 'LGPL-3',
-} 
+}
