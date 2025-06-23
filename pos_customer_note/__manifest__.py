@@ -13,8 +13,14 @@
         'point_of_sale', # Nuestra dependencia fundamental
     ],
     'assets': {
-        'point_of_sale.assets': [
-            'pos_customer_note/static/src/app/**/*',
+    'point_of_sale.assets': [
+        # 1. Primero, definimos nuestro componente para que Odoo sepa qué es "CustomerNoteButton"
+        'pos_customer_note/static/src/app/components/customer_note_button/customer_note_button.xml',
+        'pos_customer_note/static/src/app/components/customer_note_button/customer_note_button.js',
+
+        # 2. Una vez definido, aplicamos el parche a la pantalla que lo va a utilizar
+        'pos_customer_note/static/src/app/screens/product_screen/product_screen.xml',
+        'pos_customer_note/static/src/app/screens/product_screen/product_screen.js',
         ],
     },
     'installable': True,
