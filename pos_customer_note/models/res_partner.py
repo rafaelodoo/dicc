@@ -4,7 +4,7 @@ from odoo import models
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
-    def _get_pos_ui_res_partner(self, params):
+    def _get_pos_ui_res_partner(self, params): 
         """
         Heredamos este método para añadir el campo 'comment' a los datos
         del cliente que se cargan en la interfaz del TPV.
