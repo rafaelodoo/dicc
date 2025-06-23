@@ -1,7 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
     <t t-name="pos_customer_note.CustomerNoteButton" owl="1">
-        <div class="control-button" t-if="partner" t-on-click="onClick">
-            <!-- <i class="fa fa-clipboard" /> -->
+        <div class="control-button" t-on-click="onClick">
+            <i class="fa fa-clipboard" />
             <span>Nota Cliente</span>
         </div>
     </t>
