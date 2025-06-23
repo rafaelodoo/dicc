@@ -13,12 +13,12 @@
         'point_of_sale', # Nuestra dependencia fundamental
     ],
     'assets': {
-    'point_of_sale.assets': [
-        # Componente del botón
-        'pos_customer_note/static/src/app/components/customer_note_button/customer_note_button.xml',
-        'pos_customer_note/static/src/app/components/customer_note_button/customer_note_button.js',
-        # El parche de JS que lo añade
-        'pos_customer_note/static/src/app/screens/product_screen/product_screen.js',
+        'point_of_sale.assets': [
+            # Componente del botón
+            'pos_customer_note/static/src/app/components/customer_note_button/customer_note_button.xml',
+            'pos_customer_note/static/src/app/components/customer_note_button/customer_note_button.js',
+            # El parche de JS que lo añade
+            'pos_customer_note/static/src/app/screens/product_screen/product_screen.js',
         ],
     },
     'installable': True,
