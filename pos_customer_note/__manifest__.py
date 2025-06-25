@@ -17,6 +17,7 @@ Este módulo permite que el cajero agregue una nota personalizada del cliente en
             'pos_customer_note/static/src/app/components/customer_note_button/customer_note_button.xml',
             'pos_customer_note/static/src/app/components/customer_note_button/customer_note_button.js',
             'pos_customer_note/static/src/app/components/customer_note_button/customer_note_button.scss',
+            'pos_customer_note/static/src/app/components/customer_note_button/control_buttons_extend.xml',
             'pos_customer_note/static/src/app/screens/product_screen/product_screen.js',
         ],
     },

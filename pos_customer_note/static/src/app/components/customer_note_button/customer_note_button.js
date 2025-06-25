@@ -3,6 +3,7 @@
 import { Component } from "@odoo/owl";
 import { usePos } from "@point_of_sale/app/store/pos_hook";
 import { _t } from "@web/core/l10n/translation";
+import { Registries } from "@point_of_sale/app/store/registries";
  
 export class CustomerNoteButton extends Component {
     static template = "pos_customer_note.CustomerNoteButton";
@@ -38,3 +39,5 @@ export class CustomerNoteButton extends Component {
         }
     }
 }
+
+Registries.Component.add(CustomerNoteButton);
