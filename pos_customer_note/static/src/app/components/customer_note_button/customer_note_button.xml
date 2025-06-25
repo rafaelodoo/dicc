@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
     <t t-name="pos_customer_note.CustomerNoteButton" owl="1">
-        <div class="control-button" t-on-click="onClick">
-            <i class="fa fa-clipboard" />
+        <button class="btn btn-secondary customer-note-btn" t-on-click="onClick">
+            <i class="fa fa-sticky-note-o" />
             <span>Nota Cliente</span>
-        </div>
+        </button>
     </t>
 </templates>

@@ -12,12 +12,14 @@
     'depends': [
         'point_of_sale', # Nuestra dependencia fundamental
     ],
+    'data': [
+        'views/pos_views.xml',
+    ],
     'assets': {
-        'point_of_sale.assets': [
-            # Componente del botón
+        'point_of_sale._assets_pos': [
             'pos_customer_note/static/src/app/components/customer_note_button/customer_note_button.xml',
             'pos_customer_note/static/src/app/components/customer_note_button/customer_note_button.js',
-            # El parche de JS que lo añade
+            'pos_customer_note/static/src/app/components/customer_note_button/customer_note_button.scss',
             'pos_customer_note/static/src/app/screens/product_screen/product_screen.js',
         ],
     },
