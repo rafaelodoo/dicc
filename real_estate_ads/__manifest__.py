@@ -6,8 +6,7 @@
     'description': """
 Este módulo permite que el cajero agregue una nota personalizada del cliente en el ticket del TPV.
     """,
-    'author': 'Tu Nombre o Empresa',
-    'website': 'https://tusitio.com',
+    'author': 'rafael López Flores',
     'depends': ['point_of_sale'],
     'data': [
         # Aquí puedes agregar otras vistas o archivos de datos si los tienes
