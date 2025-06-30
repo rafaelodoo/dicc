@@ -19,7 +19,7 @@
             "elearning_portal/static/src/components/*.xml"
         ]
     },
-    "installable": true,
+    "installable": false,
     "application": false,
     "auto_install": false,
     "license": "LGPL-3"
