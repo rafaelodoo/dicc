@@ -1,5 +1,5 @@
 {
-    "name": "Mi componente de eLearning",
+    "name": "Mi componente de eLearning Portal Component",
     "author": "CampusCleverit",
     "website": "https://campuscleverit.es",
     "version": "18.0.0.1.0",
@@ -19,8 +19,8 @@
             "elearning_portal/static/src/components/*.xml"
         ]
     },
-    
-    "application": false,
-    "auto_install": false,
+    "installable": True,
+    "application": False,
+    "auto_install": False,
     "license": "LGPL-3"
 }
