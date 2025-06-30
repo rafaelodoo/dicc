@@ -10,16 +10,14 @@
         "website_slides",
         "web"
     ],
-    "data": [
-        #"views/portal_template.xml"
-    ],
+    
     "assets": {
         "web.assets_frontend": [
             "elearning_portal/static/src/components/*.js",
             "elearning_portal/static/src/components/*.xml"
         ]
     },
-    "installable": false,
+    "installable": true,
     "application": false,
     "auto_install": false,
     "license": "LGPL-3"
