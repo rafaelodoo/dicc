@@ -1,0 +1,10 @@
+<templates>
+
+    <t t-name="elearning_portal.SubscribedCoursesTemplate">
+        <div class="row">
+            <p>Hola Odooers</p>
+        </div>
+    </t>
+
+
+</templates>

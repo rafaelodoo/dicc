@@ -1,0 +1,1 @@
+console.log("Elearning portal js loaded...")
