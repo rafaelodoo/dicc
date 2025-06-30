@@ -11,7 +11,7 @@
         "web"
     ],
     "data": [
-        "views/portal_template.xml"
+        #"views/portal_template.xml"
     ],
     "assets": {
         "web.assets_frontend": [
