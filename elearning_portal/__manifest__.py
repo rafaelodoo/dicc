@@ -5,18 +5,6 @@
     "version": "18.0.0.1.0",
     "summary": "Displays subscribed eLearning courses on the portal using OWL",
     "category": "Portal/eLearning",
-    "depends": [
-        "portal",
-        "website_slides",
-        "web"
-    ],
-    
-    "assets": {
-        "web.assets_frontend": [
-            "elearning_portal/static/src/components/*.js",
-            "elearning_portal/static/src/components/*.xml"
-        ]
-    },
     "installable": true,
     "application": false,
     "auto_install": false,
