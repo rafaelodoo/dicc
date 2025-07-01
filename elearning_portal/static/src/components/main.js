@@ -44,7 +44,7 @@ export class SubscribedCourses extends Component {
     } finally {
       this.state.isLoading = false;
       const h3_it = document.querySelector("h3.h3_portal_courses");
-      h3_it.textContent = `My Courses (${this.state.courses.length})`;
+      h3_it.textContent = `Mis cursos odooers (${this.state.courses.length})`;
     }
   }
 }
