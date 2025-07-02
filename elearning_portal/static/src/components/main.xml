@@ -1,9 +1,19 @@
 <templates>
-    <t t-name="elearning_portal.SubscribedCoursesTemplate">
-        <div class="row">
-            <ul t-foreach="state.courses" t-as="course" t-key="course.id">
-                <li t-out="course.name"/>
-            </ul>
-        </div>
-    </t>
+    <div t-name="elearning_portal.SubscribedCoursesTemplate">
+        <ul t-foreach="state.courses" t-as="course" t-key="course.id" class="list-group">
+            <li class="list-group-item">
+                <div class="o_portal_course_row">
+                    <div class="o_portal_course_image col-md-4">
+                        <img t-attf-src="/web/image/slide.channel/{{ course.id }}/image_128" class="img-fluid"/>
+                    </div>
+                    <div class="o_portal_course_info col-md-8">
+                        <a t-attf-href="/slides/{{ course.id }}" class="text-dark">
+                            <h3 t-out="course.name" class="h5"/>
+                        </a>
+                        <p t-out="course.description" class="text-muted"/>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
 </templates>
