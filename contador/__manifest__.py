@@ -10,13 +10,12 @@
         "website_slides",
         "web"
     ],
-    "data": [
-        "views/portal_template.xml"
-    ],
+    "data": [],
     "assets": {
         "web.assets_frontend": [
-            "elearning_portal/static/src/components/*.js",
-            "elearning_portal/static/src/components/*.xml"
+            "contador/static/src/*.js",
+            "contador/static/src/*.scss",
+            "contador/static/src/*.xml"
         ]
     },
     "installable": True,
