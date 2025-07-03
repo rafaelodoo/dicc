@@ -3,7 +3,7 @@ from odoo.http import request, route
 
 class OwlPlayground(http.Controller):
     @http.route(['/oxp'], type='http', auth='public')
-    def show_playground(self):
+    def show_page(self):
         """
         Renders the owl playground page
         """
